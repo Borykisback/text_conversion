@@ -41,19 +41,23 @@ def from_A_at_a(): # Конвертировать из больш. в мал.
     time.sleep(2)
     menu()
 
-def from_():
+def from_(): # Функция слишком сделана через заднее место, нужно както переделать
     text = input("text: ")
     ispace = False
-    x = ""
+    isfirst = True
+    newtext = ""
     for i in text:
-        new_simbol = ' '
+        temporary = ''
+        if (i == text[0] and isfirst == True): # Мне кажется здесь можно сделать проще, но я не додумался 
+            i = i.upper()
+            isfirst = False
         if (ispace):
-            new_simbol = i.upper()
+            temporary = i.upper()
         else:
-            new_simbol = i       
-        x += new_simbol
+            temporary = i       
+        newtext += temporary
         ispace = i == ' '
-    print(x)
+    print(newtext)
         
 
 menu()
