@@ -30,13 +30,25 @@ def from_a_at_A(): # Конвертировать из мал. в больш.
 
 def from_A_at_a(): # Конвертировать из больш. в мал.
     x = ""
+    char = False
+    char_ = False
     text = str(input("text: "))
-    for i in text: 
-        if (i.isupper() == True):
-            i = i.lower()
-            x += i
+    for i in text:
+        next = ""
+        if (char == True and char_ == True):
+                i = i.upper()
+                next += i
+                #char = False
+                #char_ = False
         else:
-            x += i
+            if (i.isupper() == True):
+                i = i.lower()
+                next += i
+            else:
+                next += i
+        x += next
+        char = next == "."
+        char_ = next == " "
     print(x)
     time.sleep(2)
     menu()
@@ -48,7 +60,7 @@ def from_(): # Функция слишком сделана через задн�
     newtext = ""
     for i in text:
         temporary = ''
-        if (i == text[0] and isfirst == True): # Мне кажется здесь можно сделать проще, но я не додумался 
+        if (isfirst == True): # Мне кажется здесь можно сделать проще, но я не додумался 
             i = i.upper()
             isfirst = False
         if (ispace):
